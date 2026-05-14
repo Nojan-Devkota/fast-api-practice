@@ -1,33 +1,73 @@
 [
-  {
-    "id": "0005a4ea-ce3f-4dd7-bee0-f4ccc70fea6a",
-    "sku": "XIAO-359GB-001",
-    "name": "Xiaomi Model Pro",
-    "description": "Official Xiaomi product with manufacturer warranty",
-    "category": "laptops",
-    "brand": "Xiaomi",
-    "price": 25058.0,
-    "currency": "INR",
-    "discount_percent": 0,
-    "stock": 45,
-    "is_active": true,
-    "rating": 4.8,
-    "tags": ["charger", "amoled", "tablet"],
-    "image_urls": [
-      "https://cdn.example.com/xiaomi/front.png",
-      "https://cdn.example.com/xiaomi/back.png"
-    ],
-    "dimensions_cm": {
-      "length": 27.4,
-      "width": 20.8,
-      "height": 1.9
+    {
+        "id": "0005a4ea-ce3f-4dd7-bee0-f4ccc70fea6a",
+        "sku": "XIAO-359GB-001",
+        "name": "Xiaomi Model Pro",
+        "description": "Official Xiaomi product with manufacturer warranty",
+        "category": "laptops",
+        "brand": "Xiaomi",
+        "price": 25058.0,
+        "currency": "INR",
+        "discount_percent": 0,
+        "stock": 45,
+        "is_active": true,
+        "rating": 4.8,
+        "tags": [
+            "charger",
+            "amoled",
+            "tablet"
+        ],
+        "image_urls": [
+            "https://cdn.example.com/xiaomi/front.png",
+            "https://cdn.example.com/xiaomi/back.png"
+        ],
+        "dimensions_cm": {
+            "length": 27.4,
+            "width": 20.8,
+            "height": 1.9
+        },
+        "seller": {
+            "seller_id": "73cbdd06-5668-4e52-b172-e765f8468398",
+            "name": "Mi Store",
+            "email": "support@mistore.in",
+            "website": "https://www.mistore.in"
+        },
+        "created_at": "2024-09-06T00:00:00Z"
     },
-    "seller": {
-      "seller_id": "73cbdd06-5668-4e52-b172-e765f8468398",
-      "name": "Mi Store",
-      "email": "support@mistore.in",
-      "website": "https://www.mistore.in"
-    },
-    "created_at": "2024-09-06T00:00:00Z"
-  }
+    {
+        "id": "3b13fc6d-323c-4ed1-b967-8ebee69f432f",
+        "sku": "123-ssw-126",
+        "name": "Xiaomi Model Pro",
+        "description": "It is a mobile phone",
+        "category": "mobiles, smartphone, china, camera",
+        "brand": "Xiaomi",
+        "price": 500.0,
+        "currency": "USD",
+        "discount_percent": 10.0,
+        "stock": 10,
+        "is_active": true,
+        "rating": 4.5,
+        "tags": [
+            "charger",
+            "amoled",
+            "tablet"
+        ],
+        "image_urls": [
+            "https://cdn.example.com/xiaomi/front.png",
+            "https://cdn.example.com/xiaomi/back.png"
+        ],
+        "dimensions_cm": {
+            "length": 10.0,
+            "width": 10.0,
+            "height": 10.0
+        },
+        "seller": {
+            "seller_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "Xiaomi",
+            "email": "user@mistore.in",
+            "website": "https://example.com/"
+        },
+        "created_at": "2026-05-14T21:29:51.366275Z",
+        "selling_price": 450.0
+    }
 ]

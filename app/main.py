@@ -1,3 +1,6 @@
+from pydantic import HttpUrl
+from datetime import datetime, timezone
+from uuid import uuid4
 from fastapi import FastAPI, HTTPException, Query, Path
 from services.products import get_all_products
 from schema.product_schema import Product
@@ -76,7 +79,14 @@ def get_product_by_id(
 
 @app.post("/products", status_code=201)
 def create_product(product: Product):
+    product.id = uuid4()
+    
+    product.created_at = datetime.now(timezone.utc)
+    
+    try:
+        product_dict = product.model_dump(mode="json")
+        add_product(product_dict)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
-    
-    
     return {"message": "Product created successfully", "product": product}
