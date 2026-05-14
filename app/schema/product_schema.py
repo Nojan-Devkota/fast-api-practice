@@ -248,7 +248,7 @@ class Product(BaseModel):
     @model_validator(mode="after")
     @classmethod
     def validate_business_rules(cls, model: "Product") -> "Product":
-        if model.stock == 0 and model.is_active == True:
+        if model.stock == 0 and model.is_active:
             raise ValueError("If stock is 0, product should be inactive")
 
         if model.discount_percent > 0 and model.rating == 0:

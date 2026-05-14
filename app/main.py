@@ -1,4 +1,3 @@
-from pydantic import HttpUrl
 from datetime import datetime, timezone
 from uuid import uuid4
 from fastapi import FastAPI, HTTPException, Query, Path

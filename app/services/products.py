@@ -1,4 +1,3 @@
-from pydantic import DirectoryPath
 import json
 from pathlib import Path
 from typing import List, Dict
