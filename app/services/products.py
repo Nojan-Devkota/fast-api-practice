@@ -2,9 +2,7 @@ import json
 from pathlib import Path
 from typing import List, Dict
 
-DATA_FILE = Path(
-    "C:/Nojan/OneDrive - Texas State University/Fast Api Tut/FastApi-ecommerce/app/data/products.json"
-)
+DATA_FILE = Path(__file__).parent.parent / "data" / "products.json"
 
 
 def load_products() -> List[Dict]:
