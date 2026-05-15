@@ -334,7 +334,7 @@ class DimensionsUpdate(BaseModel):
 class ProductUpdate(BaseModel):
     """Product Schema"""
 
-    id: UUID
+    id: Optional[UUID] = None
     sku: Annotated[
         Optional[str],
         Field(
@@ -436,7 +436,7 @@ class ProductUpdate(BaseModel):
             examples=[4.5, 5.0],
             strict=True,
         ),
-    ]
+    ] = None
 
     tags: Annotated[
         Optional[List[str]],

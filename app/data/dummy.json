@@ -33,5 +33,41 @@
             "website": "https://www.mistore.in"
         },
         "created_at": "2024-09-06T00:00:00Z"
+    },
+    {
+        "id": "4128d279-8483-45d9-9874-c19ed54fc1c0",
+        "sku": "aaa-nnn-456",
+        "name": "NOjan",
+        "description": "This is my name",
+        "category": "Living Being",
+        "brand": "Male",
+        "price": 500000000.0,
+        "currency": "USD",
+        "discount_percent": 0.0,
+        "stock": 1,
+        "is_active": true,
+        "rating": 5.0,
+        "tags": [
+            "Tall",
+            "Brown",
+            "Asian"
+        ],
+        "image_urls": [
+            "https://cdn.example.com/xiaomi/front.png",
+            "https://cdn.example.com/xiaomi/back.png"
+        ],
+        "dimensions_cm": {
+            "length": 10.0,
+            "width": 10.0,
+            "height": 10.0
+        },
+        "seller": {
+            "seller_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "Xiaomi",
+            "email": "user@mistore.in",
+            "website": "https://example.com/"
+        },
+        "created_at": "2026-05-15T07:09:22.005047Z",
+        "selling_price": null
     }
 ]

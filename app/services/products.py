@@ -46,3 +46,15 @@ def delete_product(id: str) -> Dict:
             return {"message": "Product deleted successfully"}
 
     raise ValueError("Product not found")
+
+
+def update_product(id: str, updated_data: dict) -> dict:
+    products = get_all_products()
+
+    for idx, p in enumerate(products):
+        if p.get("id") == id:
+            p.update(updated_data)
+            save_products(products)
+            return {"message": "Product updated successfully", "product": p}
+
+    raise ValueError("Product not found")
