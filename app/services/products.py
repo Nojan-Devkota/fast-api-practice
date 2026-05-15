@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import List, Dict
 
 DATA_FILE = Path(
-    "C:/Nojan/OneDrive - Texas State University/Fast Api Tut/FastApi-ecommerce/app/data/dummy.json"
+    "C:/Nojan/OneDrive - Texas State University/Fast Api Tut/FastApi-ecommerce/app/data/products.json"
 )
 
 
