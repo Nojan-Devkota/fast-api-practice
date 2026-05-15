@@ -19,15 +19,62 @@ st.markdown(
 
     * { font-family: 'Inter', sans-serif; }
 
-    /* Clean white background */
+    /* Force light theme colors */
     .stApp {
         background-color: #f8f9fb;
+        color: #1a1a2e !important;
+    }
+
+    /* Force all text to be dark */
+    .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp p,
+    .stApp span, .stApp label, .stApp div {
+        color: #1a1a2e !important;
+    }
+
+    /* Captions stay gray */
+    .stApp [data-testid="stCaptionContainer"] * {
+        color: #6b7280 !important;
     }
 
     /* Sidebar */
     section[data-testid="stSidebar"] {
         background-color: #ffffff;
         border-right: 1px solid #e8eaed;
+    }
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] div {
+        color: #1a1a2e !important;
+    }
+
+    /* Dropdown / select boxes */
+    .stSelectbox > div > div {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+        border: 1px solid #d1d5db !important;
+    }
+
+    /* Text inputs */
+    .stTextInput > div > div > input,
+    .stNumberInput > div > div > input {
+        background-color: #ffffff !important;
+        color: #1a1a2e !important;
+        border: 1px solid #d1d5db !important;
+    }
+
+    /* Metric cards */
+    [data-testid="stMetricValue"] {
+        color: #1a1a2e !important;
+    }
+    [data-testid="stMetricLabel"] {
+        color: #6b7280 !important;
+    }
+
+    /* Container borders */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: #ffffff !important;
     }
 
     /* Hide default streamlit stuff */
