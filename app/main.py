@@ -8,22 +8,22 @@ from services.products import (
     update_product,
 )
 from schema.product_schema import Product, ProductUpdate
-from typing import Literal
+from typing import Literal, List, Dict
 
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/", response_model=dict)
 def root():
     return {"message": "Welcome to FastAPI"}
 
 
-@app.get("/allproducts")
+@app.get("/allproducts", response_model=List[Product])
 def get_products():
     return get_all_products()
 
 
-@app.get("/products")
+@app.get("/products", response_model=Dict)
 def list_product(
     name: str = Query(
         min_length=1,
@@ -63,7 +63,7 @@ def list_product(
     return {"total": total, "limit": limit, "items": products}
 
 
-@app.get("/products/{product_id}")
+@app.get("/products/{product_id}", response_model=Product)
 def get_product_by_id(
     product_id: str = Path(
         min_length=36,
@@ -80,7 +80,7 @@ def get_product_by_id(
     raise HTTPException(status_code=404, detail="Product not found")
 
 
-@app.post("/products", status_code=201)
+@app.post("/products", status_code=201, response_model=Dict)
 def create_product(product: Product):
     product.id = uuid4()
 
@@ -95,7 +95,7 @@ def create_product(product: Product):
     return {"message": "Product created successfully", "product": product}
 
 
-@app.delete("/products/{product_id}")
+@app.delete("/products/{product_id}", response_model=Dict)
 def remove_product(
     product_id: UUID = Path(
         ...,
@@ -111,7 +111,7 @@ def remove_product(
         raise HTTPException(status_code=404, detail=str(e))
 
 
-@app.put("/products/{product_id}")
+@app.put("/products/{product_id}", response_model=Dict)
 def edit_product(
     updated_data: ProductUpdate,
     product_id: UUID = Path(

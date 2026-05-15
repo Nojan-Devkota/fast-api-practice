@@ -33,10 +33,16 @@ class Seller(BaseModel):
     @classmethod
     def validate_email(cls, value: EmailStr) -> EmailStr:
         allowed_domains = [
-            "mistore.in",
+            "applestoreindia.in",
+            "asusexclusive.in",
+            "oneplusstore.in",
+            "sonycenter.in",
+            "lenovostore.in",
             "realmeofficial.in",
             "samsungindia.in",
-            "lenovostore.in",
+            "hpworld.in",
+            "mistore.in",
+            "dellexclusive.in",
         ]
         domain = str(value).split("@")[-1]
 
@@ -52,7 +58,7 @@ class Dimensions(BaseModel):
     length: Annotated[
         float,
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Length",
             description="Length of the product",
@@ -62,7 +68,7 @@ class Dimensions(BaseModel):
     width: Annotated[
         float,
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Width",
             description="Width of the product",
@@ -72,7 +78,7 @@ class Dimensions(BaseModel):
     height: Annotated[
         float,
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Height",
             description="Height of the product",
@@ -139,7 +145,7 @@ class Product(BaseModel):
     price: Annotated[
         float,
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Price",
             description="Price of the product",
@@ -147,7 +153,7 @@ class Product(BaseModel):
         ),
     ]
 
-    currency: Literal["NPR", "USD", "EUR"] = "NPR"
+    currency: Literal["NPR", "USD", "EUR", "INR"] = "NPR"
 
     discount_percent: Annotated[
         float,
@@ -283,10 +289,16 @@ class SellerUpdate(BaseModel):
     @classmethod
     def validate_email(cls, value: EmailStr) -> EmailStr:
         allowed_domains = [
-            "mistore.in",
+            "applestoreindia.in",
+            "asusexclusive.in",
+            "oneplusstore.in",
+            "sonycenter.in",
+            "lenovostore.in",
             "realmeofficial.in",
             "samsungindia.in",
-            "lenovostore.in",
+            "hpworld.in",
+            "mistore.in",
+            "dellexclusive.in",
         ]
         domain = str(value).split("@")[-1]
 
@@ -302,7 +314,7 @@ class DimensionsUpdate(BaseModel):
     length: Annotated[
         Optional[float],
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Length",
             description="Length of the product",
@@ -312,7 +324,7 @@ class DimensionsUpdate(BaseModel):
     width: Annotated[
         Optional[float],
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Width",
             description="Width of the product",
@@ -322,7 +334,7 @@ class DimensionsUpdate(BaseModel):
     height: Annotated[
         Optional[float],
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Height",
             description="Height of the product",
@@ -389,7 +401,7 @@ class ProductUpdate(BaseModel):
     price: Annotated[
         Optional[float],
         Field(
-            gt=1,
+            gt=0,
             strict=True,
             title="Price",
             description="Price of the product",
@@ -397,7 +409,7 @@ class ProductUpdate(BaseModel):
         ),
     ] = None
 
-    currency: Optional[Literal["NPR", "USD", "EUR"]] = None
+    currency: Optional[Literal["NPR", "USD", "EUR", "INR"]] = None
 
     discount_percent: Annotated[
         Optional[float],
