@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from uuid import uuid4, UUID
-from fastapi import FastAPI, HTTPException, Query, Path
+from fastapi import FastAPI, HTTPException, Query, Path, Request
 from services.products import (
     get_all_products,
     delete_product,
@@ -11,6 +11,18 @@ from schema.product_schema import Product, ProductUpdate
 from typing import Literal, List, Dict
 
 app = FastAPI()
+
+
+@app.middleware("http")
+async def lifecycle(request: Request, call_next):
+    # This runs BEFORE the request reaches your route
+    print(f"Incoming request: {request.method} {request.url}")
+
+    # Pass the request to the actual route
+    response = await call_next(request)
+
+    # This runs AFTER the route finishes, before sending to the client
+    return response
 
 
 @app.get("/", response_model=dict)
