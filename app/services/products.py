@@ -34,3 +34,15 @@ def add_product(product: Dict) -> Dict:
     save_products(products)
 
     return product
+
+
+def delete_product(id: str) -> Dict:
+    products = get_all_products()
+
+    for idx, p in enumerate(products):
+        if p.get("id") == id:
+            del products[idx]
+            save_products(products)
+            return {"message": "Product deleted successfully"}
+
+    raise ValueError("Product not found")
