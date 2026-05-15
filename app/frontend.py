@@ -91,12 +91,15 @@ st.markdown(
 def fetch_all_products():
     """Fetch all products from the FastAPI backend."""
     try:
-        response = requests.get(f"{API_URL}/allproducts", timeout=5)
+        response = requests.get(f"{API_URL}/allproducts", timeout=30)
         if response.status_code == 200:
             return response.json()
         return []
     except requests.exceptions.ConnectionError:
-        st.error("⚠️ Cannot connect to the backend. Make sure FastAPI is running on port 8000!")
+        st.error("⚠️ Cannot connect to the backend. The server may be waking up — try refreshing in 30 seconds!")
+        return []
+    except requests.exceptions.ReadTimeout:
+        st.error("⏳ The backend is taking too long to respond. It may be cold-starting — please refresh!")
         return []
 
 
